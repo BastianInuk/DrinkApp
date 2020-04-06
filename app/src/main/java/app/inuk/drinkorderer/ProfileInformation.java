@@ -17,8 +17,8 @@ public class ProfileInformation extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_information);
 
-        textName = findViewById(R.id.textName);
-        textGetName = findViewById(R.id.textGetName);
+        textName = findViewById(R.id.textEmail);
+        textGetName = findViewById(R.id.textEmail);
         buttonEdit = findViewById(R.id.buttonEdit);
         buttonEdit.setOnClickListener(this);
     }
