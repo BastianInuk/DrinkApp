@@ -8,6 +8,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,7 +30,6 @@ public class DrinksList
         System.out.println("Drinkslist activated");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drinks_list);
-        // Toolbar toolbar = findViewById(R.id.toolbar);
 
         recyclerView = (RecyclerView) findViewById(R.id.drinksList);
         recyclerView.setHasFixedSize(true);
@@ -37,17 +37,25 @@ public class DrinksList
         recyclerView.setLayoutManager(layoutManager);
 
         mAdapter = new DrinksView(testSet);
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         recyclerView.setAdapter(mAdapter);
 
-        //setSupportActionBar(toolbar);
-/*
-        // Get the Intent that started this activity and extract the string
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        // Set the toolbar from the passed in context, with a fallback title of "Hello List"
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        try {
 
-        listType = DrinkListType.fromString(message);
 
-        setTitle(listType.rawValue);*/
+            // Get the Intent that started this activity and extract the string
+            Intent intent = getIntent();
+            String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+
+            listType = DrinkListType.fromString(message);
+
+            setTitle(listType.rawValue);
+        } catch (Exception e) {
+            setTitle("Hello List");
+        }
     }
 
 }
