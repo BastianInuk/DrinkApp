@@ -3,8 +3,8 @@ package app.inuk.drinkorderer;
 
 public enum DrinkListType
 {
-    History("Historie"),
-    Orders("Ordrer"),
+    History("History"),
+    Orders("Order"),
     Error("Error");
 
     DrinkListType(String rawValue)
@@ -15,8 +15,8 @@ public enum DrinkListType
     static DrinkListType fromString(String rawValue)
     {
         switch (rawValue) {
-            case "Historie": return History;
-            case "Ordrer": return Orders;
+            case "History": return History;
+            case "Order": return Orders;
             default: return Error;
         }
     }

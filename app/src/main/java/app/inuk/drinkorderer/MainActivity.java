@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 /*
         drinkList.setAction(Intent.ACTION_SEND);
         drinkList.setType("text/plain");
-        drinkList.putExtra(Intent.EXTRA_TEXT, "Hello world");
+        drinkList.putExtra(Intent.EXTRA_TEXT, "Ordrer");
 */
             System.out.println("Drinkslist activating");
             startActivity(drinkList);
