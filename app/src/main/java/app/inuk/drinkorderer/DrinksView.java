@@ -1,6 +1,7 @@
 package app.inuk.drinkorderer;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -14,9 +15,9 @@ public class DrinksView
     public static class DrinksViewHolder
             extends RecyclerView.ViewHolder {
         public TextView textView;
-        public DrinksViewHolder(TextView view) {
+        public DrinksViewHolder(View view) {
             super(view);
-            textView = view;
+            textView = (TextView) view.findViewById(R.id.DrinksName);
         }
     }
 
@@ -28,7 +29,7 @@ public class DrinksView
     public DrinksView.DrinksViewHolder
     onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
-        TextView v = (TextView) LayoutInflater
+        View v = LayoutInflater
                 .from(parent.getContext())
                 .inflate(R.layout.drinks_view, parent, false);
 
